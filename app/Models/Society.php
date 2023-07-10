@@ -11,6 +11,7 @@ class Society extends Model
     protected $timestamps = false;
     protected $fillable = [
         'name',
+        'password',
         'born_date',
         'gender',
         'address',

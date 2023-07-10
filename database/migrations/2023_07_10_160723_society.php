@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('society', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('password');
             $table->date('born_date');
             $table->string('gender');
             $table->string('address');
