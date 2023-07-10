@@ -8,15 +8,20 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function authenticate (Request $request) {
-        $credentials = $request->validate([
-            'id_card_number' => ['required'],
-            'password' => ['required']
-        ]);
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            return response()->json();
-        };
-    } 
+    public function login(Request $request)
+    {
+        $credentials = $request->only('id_card_number', 'password');
+        $remember = true;
+
+        if (!(Auth::attempt($credentials, $remember))) {
+            return response()->json([
+                'message' => 'id or password incorrect'
+            ], 401);
+        }
+    }
 }
