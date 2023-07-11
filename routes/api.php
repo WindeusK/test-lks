@@ -20,3 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/v1/auth/login', [LoginController::class, 'login']);
+
+// TODO
+// Route::post('/v1/auth/logout', [LoginController::class, 'logout'])->middleware('auth'); 
