@@ -2,7 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +28,4 @@ Route::post('/v1/auth/login', [LoginController::class, 'login']);
 
 // Testing Routes
 Route::post('test/new_data', [TestController::class, 'test_new_data']);
+Route::get('test/all', [TestController::class, 'all']);
