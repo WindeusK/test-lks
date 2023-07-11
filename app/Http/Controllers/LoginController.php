@@ -6,12 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 
+use App\Models\Login;
+
 class LoginController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
 
     public function login(Request $request)
     {
@@ -23,5 +21,7 @@ class LoginController extends Controller
                 'message' => 'id or password incorrect'
             ], 401);
         }
+        
+        return response()->json(Login::LoginResponse($credentials['id_card_number']), 200);
     }
 }
