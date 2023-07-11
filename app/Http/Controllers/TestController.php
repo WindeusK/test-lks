@@ -15,6 +15,6 @@ class TestController extends Controller
     }
     public function test_new_data (Request $request)
     {
-        // TODO: make factory
+        
     }
 }

@@ -3,13 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Society extends Model
 {
+    use HasFactory;
+
     public $guarded = ['id'];
 
-    protected $timestamps = false;
-    protected $fillable = [
+    public $timestamps = false;
+    public $fillable = [
         'name',
         'password',
         'born_date',
