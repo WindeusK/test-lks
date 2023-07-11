@@ -23,7 +23,7 @@ class SocietyFactory extends Factory
             'born_date' => now(),
             'gender' => $this->faker->randomElement(['male', 'female']),
             'address' => $this->faker->address(),
-            'token' => Hash::make(md5($this->faker->nik())),
+            'token' => Hash::make(md5(1234567890)),
             'regional_id' => random_int(1, 34),
             'regional_province' => $this->faker->randomElement(['DKI jakarta', 'babel', 'sumsel']),
             'regional_district' => $this->faker->randomElement(['barat', 'utara', 'timur', 'selatan', 'pusat'])
