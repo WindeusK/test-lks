@@ -23,3 +23,6 @@ Route::post('/v1/auth/login', [LoginController::class, 'login']);
 
 // TODO
 // Route::post('/v1/auth/logout', [LoginController::class, 'logout'])->middleware('auth'); 
+
+// Testing Routes
+Route::post('test/new_data', [TestController::class, 'test_new_data']);
