@@ -9,6 +9,8 @@ class Society extends Model
 {
     use HasFactory;
 
+    protected $table = 'society';
+
     public $guarded = ['id'];
 
     public $timestamps = false;
