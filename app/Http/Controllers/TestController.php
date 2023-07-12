@@ -13,8 +13,4 @@ class TestController extends Controller
     {
         return Society::all();
     }
-    public function test_new_data (Request $request)
-    {
-        
-    }
 }
