@@ -29,3 +29,6 @@ Route::post('/v1/auth/login', [LoginController::class, 'login']);
 // Testing Routes
 Route::post('test/new_data', [TestController::class, 'test_new_data']);
 Route::get('test/all', [TestController::class, 'all']);
+Route::get('test/ping', function () {
+    return response()->json(['message' => 'ok'], 200);
+});
